@@ -3,7 +3,73 @@
     <title>welcome to my page</title>
     </head>
       <body style="background-color: pink;">
-     
+      <style>
+    body {
+      background-color:white;
+      display: flex;
+      justify-content: center;  
+      align-items: center;      
+      min-height: 100vh;            
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+ 
+    .card {
+      background-color: black;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+   
+    ol {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    li a {
+      display: block;
+      background-color: #f4f4f4;
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid #ddd;
+    }
+
+   
+    li a:hover {
+      background-color: #ff9800;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+   
+    li:last-child:nth-child(odd) {
+      grid-column: span 2;
+    }
+  </style>
     <h1 style="text-align: center;">welcome</h1>
 <p style="text-align: center;">This is a new website.</p>
 <ol>
