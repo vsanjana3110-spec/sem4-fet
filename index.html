@@ -1,65 +1,90 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>welcome to my page</title>
-    <style>
-        body {
-            background: linear-gradient(to right, lightpink, lavender);
-            font-family: Arial, sans-serif;
-        }
+  <title>My Resume</title>
+  <style>
+    body {
+     
+      background: linear-gradient(to bottom right, MidnightBlue, RoyalBlue);
+      display: flex;
+      justify-content: center;  
+      align-items: center;      
+      min-height: 100vh;            
+      margin: 0;
+      font-family: sans-serif;
+    }
 
-        h1,p {
-            text-align: center;
-            color: doggerblue;
-            margin-top: 30px;
-            font-size: 30px;
-    
-        }
+    .card {
+     
+      background-color: White;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+    }
 
+    h1 {
+      color: Black;
+      margin-bottom: 5px;
+    }
 
-        ol {
-            width: 350px;
-            margin: 30px auto;
-            padding: 0;
-        }
+    p {
+      color: DimGray;
+      margin-bottom: 25px;
+    }
 
-        li {
-            list-style: none;
-            margin: 10px 0;
-        }
+    ol {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
-        .box {
-            background: white;
-            padding: 12px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px gray;
-        }
+    li a {
+      display: block;
+     
+      background-color: WhiteSmoke;
+      color: DodgerBlue;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 1px solid LightGray;
+    }
 
-        a {
-            text-decoration: none;
-            color: doggerblue;
-            font-weight: bold;
-        }
+    li a:hover {
+      background-color: DodgerBlue;
+      color: White;
+      transform: scale(1.05);
+    }
 
-        a:hover {
-            color: red;
-        }
-    </style>
+    li:last-child:nth-child(odd) {
+      grid-column: span 2;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>Welcome</h1>
-<p>Assignments</p>
-
-<ol>
-    <li class="box"><a href=".../one.html">Assignment-1</a></li>
-    <li class="box"><a href=".../two.html">Assignment-2</a></li>
-    <li class="box"><a href=".../three.html">Assignment-3</a></li>
-	 <li class="box"><a href=".../four.html">Assignment-4</a></li>
-	<li class="box"><a href=".../six.html">Assignment-6</a></li>
-    <li class="box"><a href=".../seven.html">Assignment-7</a></li>
-</ol>
+  <div class="card">
+    <h1>Hello World!</h1>
+    <p>Assignments</p>
+   
+    <hr style="border: 1px solid LightGray; margin-bottom: 20px;">
+   
+    <ol>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/one.html">Assignment 1</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/two.html">Assignment 2</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/three.html">Assignment 3</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/four.html">Assignment 4</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/five.html">Assignment 5</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/six.html">Assignment 6</a></li>
+      <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/assignments/seven.html">Assignment 7</a></li>
+    </ol>
+  </div>
 
 </body>
 </html>
-
