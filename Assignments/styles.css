@@ -19,11 +19,6 @@ margin: auto;
 
 a {
 background-color: #7c3aed;
-color: white;
-padding: 8px 12px;
-text-decoration: none;
-border-radius: 6px;
-display: inline-block;
 }
 
 a:hover {
