@@ -1,27 +1,22 @@
 body {
-    background-color: skyblue;
+    background-color: #e6f2ff;
     font-family: Arial, sans-serif;
 }
+
 h1 {
     text-align: center;
-    color: darkblue;
+    color: #003366;
 }
+
 ol {
-    background-color: white;
     width: 50%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid gray;
+    margin: auto;
 }
-ol > li {
-    margin-bottom: 10px;
-}
-ul li {
-    margin-left: 15px;
-}
+
 a {
     display: block;
     text-align: center;
     margin-top: 15px;
-    color: blue;
 }
+
+
