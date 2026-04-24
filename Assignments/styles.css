@@ -1,51 +1,37 @@
 body {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background-color: skyblue;
     font-family: Arial, sans-serif;
 }
 
-/* BIG visible heading change */
+/* Simple heading */
 h1 {
     text-align: center;
     color: darkblue;
-    font-size: 40px;
-    text-transform: uppercase;
 }
 
-/* Make the list stand out clearly */
+/* Center the list */
 ol {
     background-color: white;
-    width: 60%;
-    margin: 30px auto;
-    padding: 20px;
-    border: 3px solid black;
-    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid gray;
 }
 
-/* Main categories */
+/* Main list items */
 ol > li {
-    color: darkred;
-    font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* Sub-items */
+/* Sub list items */
 ul li {
-    color: green;
-    font-size: 16px;
+    margin-left: 15px;
 }
 
-/* Make link look like a button */
+/* Simple link */
 a {
     display: block;
-    width: 200px;
-    margin: 20px auto;
     text-align: center;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: orange;
+    margin-top: 15px;
+    color: blue;
 }
