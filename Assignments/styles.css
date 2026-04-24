@@ -2,14 +2,10 @@ body {
     background-color: skyblue;
     font-family: Arial, sans-serif;
 }
-
-/* Simple heading */
 h1 {
     text-align: center;
     color: darkblue;
 }
-
-/* Center the list */
 ol {
     background-color: white;
     width: 50%;
@@ -17,18 +13,12 @@ ol {
     padding: 15px;
     border: 1px solid gray;
 }
-
-/* Main list items */
 ol > li {
     margin-bottom: 10px;
 }
-
-/* Sub list items */
 ul li {
     margin-left: 15px;
 }
-
-/* Simple link */
 a {
     display: block;
     text-align: center;
