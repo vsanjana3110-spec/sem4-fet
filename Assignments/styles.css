@@ -1,3 +1,63 @@
 body {
-  background-color:skyblue;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Center heading */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Style ordered list */
+ol {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Main list items */
+ol > li {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Sub list */
+ul {
+    margin-top: 8px;
+}
+
+/* Sub list items */
+ul li {
+    font-weight: normal;
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+/* Link styling */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #ff5722;
+    padding: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #e64a19;
 }
