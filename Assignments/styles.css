@@ -1,11 +1,11 @@
 body {
 font-family: Arial, sans-serif;
-background-color: #e0f2fe;
+background-color: #f3e8ff;
 margin: 20px;
 }
 
 h1 {
-color: #1d4ed8;
+color: #6b21a8;
 text-align: center;
 }
 
@@ -18,7 +18,7 @@ margin: auto;
 }
 
 a {
-background-color: #16a34a;
+background-color: #7c3aed;
 color: white;
 padding: 8px 12px;
 text-decoration: none;
@@ -27,9 +27,8 @@ display: inline-block;
 }
 
 a:hover {
-background-color: #15803d;
+background-color: #5b21b6;
 }
-
 
 
 
