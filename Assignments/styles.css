@@ -3,10 +3,12 @@ font-family: Arial, sans-serif;
 background-color: #f3e8ff;
 margin: 20px;
 }
+
 h1 {
 color: #6b21a8;
 text-align: center;
 }
+
 ol {
 background: #ffffff;
 padding: 20px;
@@ -14,10 +16,15 @@ border-radius: 10px;
 width: 60%;
 margin: auto;
 }
+
 a {
 background-color: #7c3aed;
 }
+
 a:hover {
 background-color: #5b21b6;
 }
+
+
+
 
