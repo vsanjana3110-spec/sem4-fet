@@ -2,17 +2,14 @@ body {
     background-color: #e6f2ff;
     font-family: Arial, sans-serif;
 }
-
 h1 {
     text-align: center;
     color: #003366;
 }
-
 ol {
     width: 50%;
     margin: auto;
 }
-
 a {
     display: block;
     text-align: center;
