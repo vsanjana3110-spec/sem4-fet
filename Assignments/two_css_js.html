@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Technical Skills List</title>
+    <style>
+        body {
+            background-color: #e0f2fe;
+            font-family: Arial;
+            padding: 20px;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 5px;
+        }
+        ul {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Technical Skills</h1>
+<input id="skillInput" placeholder="Enter skill">
+<select id="categorySelect">
+    <option value="prog">Programming Languages</option>
+    <option value="tools">Tools & Technologies</option>
+    <option value="core">Core Computer Science</option>
+</select>
+<button onclick="addSkill()">Add</button>
+<button onclick="removeSkill()">Remove</button>
+<ol>
+    <li>Programming Languages
+        <ul id="prog"><li>C</li><li>Python</li><li>Java</li></ul>
+    </li>
+    <li>Tools & Technologies
+        <ul id="tools"><li>VS Code</li><li>Git</li><li>Linux</li></ul>
+    </li>
+    <li>Core Computer Science
+        <ul id="core"><li>Programming</li><li>Data Structures</li><li>Algorithms</li></ul>
+    </li>
+</ol>
+<script>
+function getList() {
+    return document.getElementById(categorySelect.value);
+}
+function addSkill() {
+    let val = skillInput.value.trim();
+    if (!val) return alert("Enter skill");
 
+    let list = getList();
+    for (let li of list.children)
+        if (li.textContent.toLowerCase() === val.toLowerCase())
+            return alert("Already exists");
+
+    list.innerHTML += `<li>${val}</li>`;
+    skillInput.value = "";
+}
+function removeSkill() {
+    let val = skillInput.value.trim().toLowerCase();
+    let list = getList();
+
+    for (let li of list.children) {
+        if (li.textContent.toLowerCase() === val) {
+            li.remove();
+            skillInput.value = "";
+            return;
+        }
+    }
+    alert("Not found");
+}
+</script>
+</body>
+</html>
