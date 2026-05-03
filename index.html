@@ -4,36 +4,52 @@
   <title>My Resume</title>
   <style>
     body {
-      background: linear-gradient(to right, lavender, lightpink);
+    background: linear-gradient(to right, lightblue, plum);	
       font-family: sans-serif;
       text-align: center;
-      margin-top: 80px;
+      margin: 0;
+      padding: 40px;
     }
-   h1 {
+
+    h1 {
       margin-bottom: 12px;
     }
+
     p {
       color: black;
       margin-bottom: 22px;
     }
-  ol {
-      list-style-position: inside;
+
+    ol {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       padding: 0;
-      color: black;
+      list-style: none;
+      max-width: 900px;
+      margin: auto;
+      counter-reset: item; 
     }
-   li {
-      margin: 12px auto;
-      font-size: 16px;
-      background-color: white;
-      width: 250px;
-      padding: 10px;
-      border-radius: 8px;
+
+    li {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      position: relative;
+      counter-increment: item;
+    }
+
+
+    li:hover {
+      transform: translateY(-5px);
     }
 
     a {
       text-decoration: none;
       color: blue;
-      transition: 0.3s;
+      font-weight: bold;
     }
 
     a:hover {
@@ -45,7 +61,7 @@
 
 <body>
   <h1>FRONT END TECHNOLOGIES</h1>
-  <h1>Hello World!</h1>
+  <h1>WELCOME!</h1>
   <p>Assignments</p>
 
   <ol>
@@ -64,4 +80,5 @@
 
 </body>
 </html>
+
 
