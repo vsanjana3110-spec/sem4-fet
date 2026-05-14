@@ -9,12 +9,12 @@
       align-items: center;
       padding: 50px;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(150deg, #0f2027, #203a43, #2c5364);
       margin: 0;
     }
     form {
       background: white;
-      padding: 40px; 
+      padding: 30px; 
       border-radius: 10px;
       display: grid;
       gap: 20px;
@@ -34,11 +34,10 @@
       cursor: pointer; 
       font-weight: bold;
     }
-    /* Style for each submitted record */
     .record-box {
       background: white;
       padding: 20px;
-      margin-top: 15px;
+      margin-top: 10px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       width: 340px;
@@ -50,7 +49,7 @@
       padding-bottom: 2px;
     }
        .resume-box{
-        margin-top:5px;
+        margin-top:3px;
     }
     .resume-box a{
         display:inline-block;
@@ -66,7 +65,7 @@
 <body>
 
 <form id="popForm">
-  <h3>POPULATION SURVEY</h3>
+  <h3 style="text-align:center">POPULATION SURVEY</h3>
   
   <input type="text" id="inName" placeholder="Enter Name" required>
   <input type="number" id="inAge" placeholder="Enter Age" min="1" max="120" required>
@@ -82,15 +81,13 @@
     <option>Employed</option>
     <option>Self-Employed</option>
     <option>Unemployed</option>
-  </select>
-  
+  </select> 
   <select id="inCountry" required >
     <option value="">Country</option>
     <option>India</option>
     <option>USA</option>
     <option>Japan</option>
   </select>
-
   <button type="submit">Submit Data</button>
 </form>
 <div id="displayList"></div>
@@ -102,11 +99,8 @@
 <script>
   const popForm = document.getElementById('popForm');
   const displayList = document.getElementById('displayList');
-
   popForm.onsubmit = function(e) {
     e.preventDefault();
-
-
     const name = document.getElementById('inName').value;
     const age = document.getElementById('inAge').value;
     const gender = document.querySelector('input[name="g"]:checked').value;
@@ -123,9 +117,7 @@
       <div class="record-line"><strong>Status:</strong> ${status}</div>
       <div class="record-line"><strong>Country:</strong> ${country}</div>
     `;
-
     displayList.prepend(newRecord);
-
     popForm.reset();
   };
 </script>
