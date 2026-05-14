@@ -4,14 +4,25 @@
 <style>
     body{
         font-family: Arial, sans-serif;
+        margin:0;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color:white;
+        min-height:100vh;
+
+        /* center wrapper */
         display:flex;
         justify-content:center;
         align-items:center;
-        height:100vh;
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        color:white;
-        margin:0;
+        flex-direction:column;
     }
+
+    .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
     .box{
         background: rgba(255,255,255,0.08);
         padding:70px;
@@ -21,6 +32,7 @@
         transition:0.3s;
         border:2px solid transparent;
     }
+
     .blink{
         animation: blinkBorder 0.5s ease;
     }
@@ -30,11 +42,13 @@
         50%  { border-color: #ff4d4d; }
         100% { border-color: transparent; }
     }
+
     .locked{
         opacity:0.6;
         border:2px solid #ff3b3b;
         filter: blur(0.5px);
     }
+
     input{
         padding:15px;
         width:90%;
@@ -47,12 +61,10 @@
         outline:none;
         transition:0.3s;
     }
-
     input:focus{
         border-color:#38bdf8;
         box-shadow: 0 0 8px rgba(56,189,248,0.6);
     }
-
     button{
         padding:12px 15px;
         width:100%;
@@ -64,7 +76,6 @@
         cursor:pointer;
         transition:0.3s;
     }
-
     button:hover{
         transform: translateY(-2px);
     }
@@ -81,10 +92,6 @@
         color:lightgreen;
         font-weight:bold;
     }
-     .resume-box{
-        text-align:center;
-        margin-top:500px;
-    }
     .resume-box a{
         display:inline-block;
         padding:10px 18px;
@@ -98,17 +105,20 @@
 </head>
 
 <body>
+<div class="container">
 
-<div class="box" id="box">
-    <h2>SECURE LOGIN TERMINAL</h2>
-    <input type="password" id="pass" placeholder="Enter Security Code">
-    <button onclick="checkPassword()">UNLOCK TERMINAL</button>
-    <p id="msg"></p>
-</div>
-<div class="resume-box">
-    <a href="https://vsanjana3110-spec.github.io/sem4-fet/">
-        My Resume
-    </a>
+    <div class="box" id="box">
+        <h2>SECURE LOGIN TERMINAL</h2>
+        <input type="password" id="pass" placeholder="Enter Security Code">
+        <button onclick="checkPassword()">UNLOCK TERMINAL</button>
+        <p id="msg"></p>
+    </div>
+
+    <div class="resume-box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/">
+            My Resume
+        </a>
+    </div>
 </div>
 <script>
 const CORRECT_PASSWORD = "admin123";
@@ -122,9 +132,7 @@ function doWhileCheck(val){
     } while(false);
     return temp;
 }
-
 function checkPassword(){
-
     let input = document.getElementById("pass");
     let msg = document.getElementById("msg");
     let box = document.getElementById("box");
@@ -138,17 +146,14 @@ function checkPassword(){
             break;
         }
         else{
-          attempts--;
+            attempts--;
             msg.className = "error";
             msg.innerText = attempts > 0
                 ? "Wrong Code. Attempts left: " + attempts
                 : "SYSTEM LOCKED ❌";
-
             box.classList.add("blink");
             setTimeout(()=>box.classList.remove("blink"), 500);
-
             input.value = "";
-
             if(attempts === 0){
                 input.disabled = true;
                 document.querySelector("button").disabled = true;
@@ -162,4 +167,3 @@ function checkPassword(){
 </script>
 </body>
 </html>
-
