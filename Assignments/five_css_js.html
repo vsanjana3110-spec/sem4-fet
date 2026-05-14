@@ -22,14 +22,12 @@
     button:hover{
         background:white;
     }
-
     .container{
         position:relative;
         width:300px;
         height:180px;
         margin:auto;
     }
-
     .layer{
         position:absolute;
         width:100%;
@@ -70,21 +68,16 @@
 </head>
 <body>
 <h2>Using Z-index Layers</h2>
-
 <button onclick="showLayer('education')">Layer 1</button>
 <button onclick="showLayer('skills')">Layer 2</button>
 <button onclick="showLayer('experience')">Layer 3</button>
-
 <div class="container">
-
     <div id="education" class="layer">
         Education
     </div>
-
     <div id="skills" class="layer">
         Skills
     </div>
-
     <div id="experience" class="layer">
         Experience
     </div>
@@ -99,15 +92,11 @@
 </div>
 <script>
 function showLayer(selectedLayer){
-
     const layers = document.querySelectorAll('.layer');
-
     layers.forEach(layer=>{
         layer.style.zIndex = "0";
     });
-
     document.getElementById(selectedLayer).style.zIndex = "10";
-
     document.getElementById("status").innerHTML =
     "Active Section: " +
     selectedLayer.charAt(0).toUpperCase() + selectedLayer.slice(1);
