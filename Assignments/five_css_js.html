@@ -22,12 +22,14 @@
     button:hover{
         background:white;
     }
+
     .container{
         position:relative;
         width:300px;
         height:180px;
         margin:auto;
     }
+
     .layer{
         position:absolute;
         width:100%;
@@ -52,20 +54,37 @@
         background:#22c55e;
         z-index:0;
     }
+    .resume-box{
+        margin-top:25px;
+    }
+    .resume-box a{
+        display:inline-block;
+        padding:10px 18px;
+        background:#38bdf8;
+        color:#0f172a;
+        text-decoration:none;
+        border-radius:6px;
+        font-weight:bold;
+    }
 </style>
 </head>
 <body>
 <h2>Using Z-index Layers</h2>
+
 <button onclick="showLayer('education')">Layer 1</button>
 <button onclick="showLayer('skills')">Layer 2</button>
 <button onclick="showLayer('experience')">Layer 3</button>
+
 <div class="container">
+
     <div id="education" class="layer">
         Education
     </div>
+
     <div id="skills" class="layer">
         Skills
     </div>
+
     <div id="experience" class="layer">
         Experience
     </div>
@@ -73,20 +92,26 @@
 <h2 id="status">
     Active Section: Education
 </h2>
+<div class="resume-box">
+    <a href="https://vsanjana3110-spec.github.io/sem4-fet/">
+        My Resume
+    </a>
+</div>
 <script>
 function showLayer(selectedLayer){
+
     const layers = document.querySelectorAll('.layer');
+
     layers.forEach(layer=>{
         layer.style.zIndex = "0";
     });
+
     document.getElementById(selectedLayer).style.zIndex = "10";
+
     document.getElementById("status").innerHTML =
     "Active Section: " +
     selectedLayer.charAt(0).toUpperCase() + selectedLayer.slice(1);
 }
 </script>
-<p>
-<a href="https://vsanjana3110-spec.github.io/sem4-fet/">My Resume</a>
-</p>
 </body>
 </html>
