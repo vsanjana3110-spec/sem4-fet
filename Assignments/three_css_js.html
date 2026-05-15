@@ -1,125 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Population Survey</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 50px;
+      padding: 40px;
       min-height: 100vh;
-      background: linear-gradient(150deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       margin: 0;
+      color: white;
     }
     form {
       background: white;
-      padding: 30px; 
+      color: black;
+      padding: 25px;
       border-radius: 10px;
+      width: 320px;
       display: grid;
-      gap: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-      width: 300px;
-      margin-bottom: 30px;
+      gap: 12px;
     }
-    input, select, button { 
-      padding: 10px; 
-      border: 2px solid #ccc; 
-      border-radius: 10px; 
+    input, select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
+    fieldset {
+      border: 2px solid #4285F4;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    legend {
+      font-weight: bold;
+      color: #4285F4;
+    }
+
     button {
-      background: #4285F4; 
+      padding: 10px;
+      background: #4285F4;
       color: white;
-      border: none; 
-      cursor: pointer; 
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       font-weight: bold;
     }
-    .record-box {
+    .record {
       background: white;
-      padding: 20px;
+      color: black;
+      padding: 15px;
       margin-top: 10px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 340px;
-      border-left: 6px solid #4285F4;
-    }
-    .record-line {
-      margin-bottom: 5px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 2px;
-    }
-       .resume-box{
-        margin-top:3px;
-    }
-    .resume-box a{
-        display:inline-block;
-        padding:10px 18px;
-        background:#38bdf8;
-        color:#0f172a;
-        text-decoration:none;
-        border-radius:6px;
-        font-weight:bold;
+      width: 320px;
     }
   </style>
 </head>
 <body>
-
-<form id="popForm">
-  <h3 style="text-align:center">POPULATION SURVEY</h3>
-  
-  <input type="text" id="inName" placeholder="Enter Name" required>
-  <input type="number" id="inAge" placeholder="Enter Age" min="1" max="120" required>
-  
-  <label>
-    <input type="radio" name="g" value="Male" required> Male
-    <input type="radio" name="g" value="Female"> Female
-  </label>
-  
-  <select id="inStatus" required>
+<h2>POPULATION SURVEY</h2>
+<form id="surveyForm">
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="number" id="age" placeholder="Enter Age">
+  <fieldset>
+    <legend>Gender</legend>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+  </fieldset>
+  <fieldset>
+    <legend>Hobbies</legend>
+    <input type="checkbox" name="hobby" value="Reading"> Reading
+    <input type="checkbox" name="hobby" value="Sports"> Sports
+    <input type="checkbox" name="hobby" value="Music"> Music
+  </fieldset>
+  <select id="status">
     <option value="">Employment Status</option>
     <option>Student</option>
     <option>Employed</option>
     <option>Self-Employed</option>
     <option>Unemployed</option>
-  </select> 
-  <select id="inCountry" required >
+  </select>
+
+  <select id="country">
     <option value="">Country</option>
     <option>India</option>
     <option>USA</option>
     <option>Japan</option>
   </select>
-  <button type="submit">Submit Data</button>
+
+  <button type="submit">Submit</button>
 </form>
-<div id="displayList"></div>
-<div class="resume-box">
-    <a href="https://vsanjana3110-spec.github.io/sem4-fet/">
-        My Resume
-    </a>
-</div>
+<div id="output"></div>
 <script>
-  const popForm = document.getElementById('popForm');
-  const displayList = document.getElementById('displayList');
-  popForm.onsubmit = function(e) {
-    e.preventDefault();
-    const name = document.getElementById('inName').value;
-    const age = document.getElementById('inAge').value;
-    const gender = document.querySelector('input[name="g"]:checked').value;
-    const status = document.getElementById('inStatus').value;
-    const country = document.getElementById('inCountry').value;
+const form = document.getElementById("surveyForm");
+const output = document.getElementById("output");
+let records = [];
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  let name = document.getElementById("name").value.trim();
+  let age = document.getElementById("age").value.trim();
+  let status = document.getElementById("status").value;
+  let country = document.getElementById("country").value;
 
-    const newRecord = document.createElement('div');
-    newRecord.className = 'record-box';
+  let gender = document.querySelector('input[name="gender"]:checked');
+  let checkboxes = document.querySelectorAll('input[name="hobby"]:checked');
+  if (name === "" || age === "" || status === "" || country === "") {
+    alert("Please fill all fields");
+    return;
+  }
+  if (!gender) {
+    alert("Please select gender");
+    return;
+  }
+  if (checkboxes.length === 0) {
+    alert("Please select at least one hobby");
+    return;
+  }
 
-    newRecord.innerHTML = `
-      <div class="record-line"><strong>Name:</strong> ${name}</div>
-      <div class="record-line"><strong>Age:</strong> ${age}</div>
-      <div class="record-line"><strong>Gender:</strong> ${gender}</div>
-      <div class="record-line"><strong>Status:</strong> ${status}</div>
-      <div class="record-line"><strong>Country:</strong> ${country}</div>
-    `;
-    displayList.prepend(newRecord);
-    popForm.reset();
-  };
+  let hobbies = [];
+  for (let i = 0; i < checkboxes.length; i++) {
+    hobbies.push(checkboxes[i].value);
+  }
+  records.push({
+    name: name,
+    age: age,
+    gender: gender.value,
+    hobbies: hobbies.join(", "),
+    status: status,
+    country: country
+  });
+  output.innerHTML = "";
+  for (let i = 0; i < records.length; i++) {
+    let div = document.createElement("div");
+    div.className = "record";
+    div.innerHTML =
+      "<b>Record " + (i + 1) + "</b><br>" +
+      "<b>Name:</b> " + records[i].name + "<br>" +
+      "<b>Age:</b> " + records[i].age + "<br>" +
+      "<b>Gender:</b> " + records[i].gender + "<br>" +
+      "<b>Hobbies:</b> " + records[i].hobbies + "<br>" +
+      "<b>Status:</b> " + records[i].status + "<br>" +
+      "<b>Country:</b> " + records[i].country;
+    output.appendChild(div);
+  }
+  form.reset();
+});
 </script>
 </body>
 </html>
