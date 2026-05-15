@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: white;
+    }
+    .form-box {
+      width: 320px;
+      margin: auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+    }
+    input, select, button {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      background: #38bdf8;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #output {
+      margin-top: 20px;
+      color: #e2e8f0;
+      text-align: left;
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+<h2>Student Registration Form</h2>
+<div class="form-box">
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <input type="email" id="emailInput" placeholder="Enter your email">
+  <select id="courseSelect">
+    <option value="C">C Programming</option>
+    <option value="Python">Python</option>
+    <option value="Java">Java</option>
+    <option value="Web">Web Development</option>
+  </select>
+  <select id="levelBox" size="4">
+    <option>Beginner</option>
+    <option>Intermediate</option>
+    <option>Advanced</option>
+    <option>Expert</option>
+  </select>
+  <button id="submitBtn">Submit</button>
+</div>
+<p id="output"></p>
+<script>
+const nameInput = document.getElementById("nameInput");
+const emailInput = document.getElementById("emailInput");
+const courseSelect = document.getElementById("courseSelect");
+const levelBox = document.getElementById("levelBox");
+const output = document.getElementById("output");
+const submitBtn = document.getElementById("submitBtn");
 
+// STORE MULTIPLE RECORDS
+let records = [];
+
+submitBtn.addEventListener("click", function () {
+
+    let name = nameInput.value.trim();
+    let email = emailInput.value.trim();
+    let course = courseSelect.value;
+    let level = levelBox.value;
+
+    // VALIDATION PATTERNS
+    let namePattern = /^[A-Za-z\s]+$/;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // CHECK EMPTY
+    if (name === "" || email === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (!namePattern.test(name)) {
+        alert("Name must contain only letters");
+        return;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address");
+        return;
+    }
+    records.push({
+        name: name,
+        email: email,
+        course: course,
+        level: level
+    });
+    let displayText = "";
+
+    for (let i = 0; i < records.length; i++) {
+        displayText +=
+            (i + 1) + ". " +
+            "Name: " + records[i].name +
+            " | Email: " + records[i].email +
+            " | Course: " + records[i].course +
+            " | Level: " + records[i].level +
+            "<br>";
+    }
+    output.innerHTML = displayText;
+    nameInput.value = "";
+    emailInput.value = "";
+});
+nameInput.onfocus = function () {
+    nameInput.style.background = "#e0f2fe";
+};
+</script>
+
+</body>
+</html>
