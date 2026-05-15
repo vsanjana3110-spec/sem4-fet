@@ -1,54 +1,71 @@
 const CORRECT_PASSWORD = "admin123";
 let attempts = 3;
-function getInputValue() {
+
+// DO-WHILE (input handling demo)
+function getPasswordValue() {
     let value;
-    let valid = false;
+
     do {
         value = document.getElementById("pass").value;
-
-        if (value !== "") {
-            valid = true;
-        } else {
-            alert("Please enter password");
-            break;
-        }
-
-    } while (!valid);
+        break;
+    } while(false);
 
     return value;
 }
-function checkPassword() {
+
+// LOGIN FUNCTION (WHILE LOOP)
+function checkPassword(){
 
     let msg = document.getElementById("msg");
-    let box = document.querySelector(".box");
 
     let i = 0;
 
-    while (i < 1) {   // controlled loop
+    while(i < 1){
 
-        let value = getInputValue();
+        let value = getPasswordValue();
 
-        if (value === CORRECT_PASSWORD) {
-            msg.className = "success";
+        if(value === CORRECT_PASSWORD){
+
             msg.innerText = "ACCESS GRANTED ✔";
+            msg.className = "success";
+
+            // show form
+            document.getElementById("studentForm").style.display = "block";
             break;
-        } 
-        else {
+        }
+        else{
             attempts--;
 
-            msg.className = "error";
             msg.innerText = attempts > 0
                 ? "Wrong password. Attempts left: " + attempts
                 : "SYSTEM LOCKED ❌";
 
+            msg.className = "error";
+
             document.getElementById("pass").value = "";
 
-            if (attempts === 0) {
+            if(attempts === 0){
                 document.getElementById("pass").disabled = true;
-                document.querySelector("button").disabled = true;
             }
         }
 
         i++;
     }
+}
+
+// STUDENT FORM FUNCTION
+function submitStudent(){
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let course = document.getElementById("course").value;
+    let level = document.getElementById("level").value;
+
+    if(name === "" || age === ""){
+        document.getElementById("smsg").innerText = "Fill all fields";
+        return;
+    }
+
+    document.getElementById("smsg").innerText =
+        "Saved ✔ " + name + " | " + course + " | " + level;
 }
