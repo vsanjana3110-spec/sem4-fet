@@ -13,7 +13,6 @@
         align-items:center;
         flex-direction:column;
     }
-
     .box{
         background: rgba(255,255,255,0.08);
         padding:70px;
@@ -21,7 +20,6 @@
         text-align:center;
         width:300px;
     }
-
     input{
         padding:15px;
         width:90%;
@@ -32,7 +30,6 @@
         background: rgba(0,0,0,0.2);
         color:white;
     }
-
     button{
         padding:12px;
         width:100%;
@@ -42,23 +39,17 @@
         cursor:pointer;
         font-weight:bold;
     }
-
     .error{ color:#ff6b6b; font-weight:bold; }
     .success{ color:lightgreen; font-weight:bold; }
 </style>
 </head>
-
 <body>
-
 <div class="box">
     <h2>SECURE LOGIN</h2>
     <input type="password" id="pass" placeholder="Enter Password">
     <button onclick="checkPassword()">LOGIN</button>
     <p id="msg"></p>
 </div>
-
-<!-- ✅ EXTERNAL JS LINK -->
 <script src="script.js"></script>
-
 </body>
 </html>
