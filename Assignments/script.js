@@ -1,11 +1,8 @@
 const CORRECT_PASSWORD = "admin123";
 let attempts = 3;
-
-// DO-WHILE LOOP (real usage: at least one execution)
 function getInputValue() {
     let value;
     let valid = false;
-
     do {
         value = document.getElementById("pass").value;
 
@@ -20,8 +17,6 @@ function getInputValue() {
 
     return value;
 }
-
-// WHILE LOOP (real attempt control)
 function checkPassword() {
 
     let msg = document.getElementById("msg");
