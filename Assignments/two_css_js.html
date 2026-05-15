@@ -4,49 +4,85 @@
     <title>Technical Skills List</title>
     <style>
         body {
-            background-color: #e0f2fe;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             font-family: Arial;
             padding: 20px;
+            color: white;
         }
+
         input, select, button {
             margin: 5px;
             padding: 5px;
         }
+
         ul {
-            background: white;
+            background: rgba(255,255,255,0.15);
             padding: 10px;
             border-radius: 5px;
+            color: white;
         }
+
+        a {
+            color: white;
+            background-color: #3399ff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #66ccff;
+            color: black;
+            cursor: pointer;
+        }
+        h1 {
+    color: #38bdf8;
+}
     </style>
 </head>
+
 <body>
+
 <h1>Technical Skills</h1>
+
 <input id="skillInput" placeholder="Enter skill">
+
 <select id="categorySelect">
     <option value="prog">Programming Languages</option>
     <option value="tools">Tools & Technologies</option>
     <option value="core">Core Computer Science</option>
 </select>
+
 <button onclick="addSkill()">Add</button>
 <button onclick="removeSkill()">Remove</button>
+
 <ol>
     <li>Programming Languages
         <ul id="prog"><li>C</li><li>Python</li><li>Java</li></ul>
     </li>
+
     <li>Tools & Technologies
         <ul id="tools"><li>VS Code</li><li>Git</li><li>Linux</li></ul>
     </li>
+
     <li>Core Computer Science
         <ul id="core"><li>Programming</li><li>Data Structures</li><li>Algorithms</li></ul>
     </li>
 </ol>
+
 <p>
 <a href="https://vsanjana3110-spec.github.io/sem4-fet/">My Resume</a>
 </p>
+
 <script>
 function getList() {
     return document.getElementById(categorySelect.value);
 }
+
 function addSkill() {
     debugger;
     let val = skillInput.value.trim();
@@ -60,6 +96,7 @@ function addSkill() {
     list.innerHTML += `<li>${val}</li>`;
     skillInput.value = "";
 }
+
 function removeSkill() {
     let val = skillInput.value.trim().toLowerCase();
     let list = getList();
@@ -74,5 +111,6 @@ function removeSkill() {
     alert("Not found");
 }
 </script>
+
 </body>
 </html>
