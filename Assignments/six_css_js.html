@@ -23,7 +23,7 @@
         margin-bottom:20px;
     }
 
-    input, select{
+    input{
         width:90%;
         padding:10px;
         margin:10px 0;
@@ -42,50 +42,39 @@
         cursor:pointer;
     }
 
-    #studentForm{
+    #studentDetails{
         display:none;
     }
 
     .error{ color:#ff6b6b; }
     .success{ color:lightgreen; }
+
+    p{
+        margin:8px 0;
+    }
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
-<div class="box" id="loginBox">
+<!-- LOGIN BOX -->
+<div class="box">
     <h2>SECURE LOGIN</h2>
     <input type="password" id="pass" placeholder="Enter Password">
     <button onclick="checkPassword()">Login</button>
     <p id="msg"></p>
 </div>
 
-<!-- STUDENT FORM -->
-<div class="box" id="studentForm">
-    <h2>STUDENT FORM</h2>
+<!-- STUDENT DETAILS (UPDATED) -->
+<div class="box" id="studentDetails">
+    <h2>STUDENT DETAILS</h2>
 
-    <input type="text" id="name" placeholder="Name">
-    <input type="number" id="age" placeholder="Age">
-
-    <select id="course">
-        <option>C</option>
-        <option>Python</option>
-        <option>Java</option>
-        <option>Web</option>
-    </select>
-
-    <select id="level">
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-    </select>
-
-    <button onclick="submitStudent()">Submit</button>
-    <p id="smsg"></p>
+    <p><b>Name:</b> Sanjana V</p>
+    <p><b>USN:</b> 4MT24CS175</p>
+    <p><b>Department:</b> Computer Science and Engineering</p>
+    <p><b>Section:</b> CSE3</p>
 </div>
 
-<!-- ✅ EXTERNAL JS LINK -->
 <script src="script.js"></script>
 
 </body>
