@@ -8,19 +8,10 @@
         background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
         color:white;
         min-height:100vh;
-
-        /* center wrapper */
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
-    }
-
-    .container{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
     }
 
     .box{
@@ -29,24 +20,6 @@
         border-radius:12px;
         text-align:center;
         width:300px;
-        transition:0.3s;
-        border:2px solid transparent;
-    }
-
-    .blink{
-        animation: blinkBorder 0.5s ease;
-    }
-
-    @keyframes blinkBorder{
-        0%   { border-color: transparent; }
-        50%  { border-color: #ff4d4d; }
-        100% { border-color: transparent; }
-    }
-
-    .locked{
-        opacity:0.6;
-        border:2px solid #ff3b3b;
-        filter: blur(0.5px);
     }
 
     input{
@@ -58,112 +31,34 @@
         text-align:center;
         background: rgba(0,0,0,0.2);
         color:white;
-        outline:none;
-        transition:0.3s;
     }
-    input:focus{
-        border-color:#38bdf8;
-        box-shadow: 0 0 8px rgba(56,189,248,0.6);
-    }
+
     button{
-        padding:12px 15px;
+        padding:12px;
         width:100%;
         border:none;
         border-radius:8px;
-        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-        color:white;
-        font-weight:bold;
+        background: #38bdf8;
         cursor:pointer;
-        transition:0.3s;
-    }
-    button:hover{
-        transform: translateY(-2px);
-    }
-    #msg{
-        margin-top:10px;
-        font-size:15px;
-        min-height:20px;
-    }
-    .error{
-        color:#ff6b6b;
         font-weight:bold;
     }
-    .success{
-        color:lightgreen;
-        font-weight:bold;
-    }
-    .resume-box a{
-        display:inline-block;
-        padding:10px 18px;
-        background:#38bdf8;
-        color:#0f172a;
-        text-decoration:none;
-        border-radius:5px;
-        font-weight:bold;
-    }
+
+    .error{ color:#ff6b6b; font-weight:bold; }
+    .success{ color:lightgreen; font-weight:bold; }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-    <div class="box" id="box">
-        <h2>SECURE LOGIN TERMINAL</h2>
-        <input type="password" id="pass" placeholder="Enter Security Code">
-        <button onclick="checkPassword()">UNLOCK TERMINAL</button>
-        <p id="msg"></p>
-    </div>
-
-    <div class="resume-box">
-        <a href="https://vsanjana3110-spec.github.io/sem4-fet/">
-            My Resume
-        </a>
-    </div>
+<div class="box">
+    <h2>SECURE LOGIN</h2>
+    <input type="password" id="pass" placeholder="Enter Password">
+    <button onclick="checkPassword()">LOGIN</button>
+    <p id="msg"></p>
 </div>
-<script>
-const CORRECT_PASSWORD = "admin123";
-let attempts = 3;
 
-function doWhileCheck(val){
-    let temp;
-    do {
-        temp = val;
-        break;
-    } while(false);
-    return temp;
-}
-function checkPassword(){
-    let input = document.getElementById("pass");
-    let msg = document.getElementById("msg");
-    let box = document.getElementById("box");
-    let value = doWhileCheck(input.value);
-    let i = 0;
-    while(i < 1){
-        if(value === CORRECT_PASSWORD){
+<!-- ✅ EXTERNAL JS LINK -->
+<script src="script.js"></script>
 
-            msg.className = "success";
-            msg.innerText = "ACCESS GRANTED ✔";
-            break;
-        }
-        else{
-            attempts--;
-            msg.className = "error";
-            msg.innerText = attempts > 0
-                ? "Wrong Code. Attempts left: " + attempts
-                : "SYSTEM LOCKED ❌";
-            box.classList.add("blink");
-            setTimeout(()=>box.classList.remove("blink"), 500);
-            input.value = "";
-            if(attempts === 0){
-                input.disabled = true;
-                document.querySelector("button").disabled = true;
-                box.classList.add("locked");
-            }
-        }
-
-        i++;
-    }
-}
-</script>
 </body>
 </html>
