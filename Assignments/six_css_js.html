@@ -13,43 +13,80 @@
         align-items:center;
         flex-direction:column;
     }
+
     .box{
         background: rgba(255,255,255,0.08);
-        padding:70px;
+        padding:40px;
         border-radius:12px;
+        width:320px;
         text-align:center;
-        width:300px;
+        margin-bottom:20px;
     }
-    input{
-        padding:15px;
+
+    input, select{
         width:90%;
-        margin:20px 0;
-        border-radius:8px;
-        border:1px solid rgba(255,255,255,0.2);
-        text-align:center;
-        background: rgba(0,0,0,0.2);
-        color:white;
-    }
-    button{
-        padding:12px;
-        width:100%;
+        padding:10px;
+        margin:10px 0;
+        border-radius:6px;
         border:none;
-        border-radius:8px;
-        background: #38bdf8;
-        cursor:pointer;
-        font-weight:bold;
+        text-align:center;
     }
-    .error{ color:#ff6b6b; font-weight:bold; }
-    .success{ color:lightgreen; font-weight:bold; }
+
+    button{
+        width:100%;
+        padding:10px;
+        background:#38bdf8;
+        border:none;
+        border-radius:6px;
+        font-weight:bold;
+        cursor:pointer;
+    }
+
+    #studentForm{
+        display:none;
+    }
+
+    .error{ color:#ff6b6b; }
+    .success{ color:lightgreen; }
 </style>
 </head>
+
 <body>
-<div class="box">
+
+<!-- LOGIN -->
+<div class="box" id="loginBox">
     <h2>SECURE LOGIN</h2>
     <input type="password" id="pass" placeholder="Enter Password">
-    <button onclick="checkPassword()">LOGIN</button>
+    <button onclick="checkPassword()">Login</button>
     <p id="msg"></p>
 </div>
+
+<!-- STUDENT FORM -->
+<div class="box" id="studentForm">
+    <h2>STUDENT FORM</h2>
+
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="age" placeholder="Age">
+
+    <select id="course">
+        <option>C</option>
+        <option>Python</option>
+        <option>Java</option>
+        <option>Web</option>
+    </select>
+
+    <select id="level">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select>
+
+    <button onclick="submitStudent()">Submit</button>
+    <p id="smsg"></p>
+</div>
+
+<!-- ✅ EXTERNAL JS LINK -->
 <script src="script.js"></script>
+
 </body>
 </html>
