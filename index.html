@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>My Resume</title>
+
   <style>
+
     body {
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       font-family: sans-serif;
@@ -11,40 +13,51 @@
       padding: 40px;
     }
 
+    .card {
+      max-width: 950px;
+      margin: auto;
+    }
+
     h1 {
       margin-bottom: 12px;
     }
+
     h1, h2 {
       color: #38bdf8;
     }
 
-    p {
-      color: black;
-      margin-bottom: 22px;
+    .description {
+      color: white;
+      margin-bottom: 30px;
+      line-height: 1.7;
     }
 
-    ol {
+    .section-title {
+      color: #38bdf8;
+      font-size: 28px;
+      margin: 35px 0 20px;
+      border-left: 5px solid #38bdf8;
+      padding-left: 12px;
+      text-align: left;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 0;
-      list-style: none;
       max-width: 900px;
       margin: auto;
-      counter-reset: item; 
     }
 
-    li {
+    .box {
       background: white;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: 0.3s;
-      position: relative;
-      counter-increment: item;
     }
 
-    li:hover {
+    .box:hover {
       transform: translateY(-5px);
     }
 
@@ -52,34 +65,159 @@
       text-decoration: none;
       color: black;
       font-weight: bold;
+      display: block;
     }
 
     a:hover {
       color: white;
       text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f;
     }
+
+    @media(max-width: 600px) {
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
-  <h1>FRONT END TECHNOLOGIES</h1>
-  <h1>WELCOME!</h1>
-  <h2>Sanjana V</h2>
-  <ol>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one.html">HTML Assignment 1</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two.html">HTML Assignment 2</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/three.html">HTML Assignment 3</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/four.html">HTML Assignment 4</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/five.html">HTML Assignment 5</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/six.html">HTML Assignment 6</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/seven.html">HTML Assignment 7</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one_css.html">CSS Assignment 1</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two_css.html">CSS Assignment 2</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one_css_js.html">JAVA SCRIPT Assignment 1</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two_css_js.html">JAVA SCRIPT Assignment 2</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/three_css_js.html">JAVA SCRIPT Assignment 3</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/four_css_js.html">JAVA SCRIPT Assignment 4</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/five_css_js.html">JAVA SCRIPT Assignment 5</a></li>
-    <li><a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/six_css_js.html">JAVA SCRIPT Assignment 6</a></li>
-  </ol>
+
+  <div class="card">
+
+    <h1>FRONT END TECHNOLOGIES</h1>
+    <h1>WELCOME!</h1>
+    <h2>Sanjana V</h2>
+
+    <div class="description">
+      Welcome to my Frontend Technology Portfolio.
+      This portfolio contains all my HTML, CSS and JavaScript assignments
+      created during my Frontend Technology course.
+    </div>
+
+    <!-- HTML SECTION -->
+
+    <div class="section-title">HTML Assignments</div>
+
+    <div class="grid">
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one.html">
+          HTML Assignment 1
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two.html">
+          HTML Assignment 2
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/three.html">
+          HTML Assignment 3
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/four.html">
+          HTML Assignment 4
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/five.html">
+          HTML Assignment 5
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/six.html">
+          HTML Assignment 6
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/seven.html">
+          HTML Assignment 7
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- CSS SECTION -->
+
+    <div class="section-title">CSS Assignments</div>
+
+    <div class="grid">
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one_css.html">
+          CSS Assignment 1
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two_css.html">
+          CSS Assignment 2
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT SECTION -->
+
+    <div class="section-title">JavaScript Assignments</div>
+
+    <div class="grid">
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/one_css_js.html">
+          JavaScript Assignment 1
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/two_css_js.html">
+          JavaScript Assignment 2
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/three_css_js.html">
+          JavaScript Assignment 3
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/four_css_js.html">
+          JavaScript Assignment 4
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/five_css_js.html">
+          JavaScript Assignment 5
+        </a>
+      </div>
+
+      <div class="box">
+        <a href="https://vsanjana3110-spec.github.io/sem4-fet/Assignments/six_css_js.html">
+          JavaScript Assignment 6
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
